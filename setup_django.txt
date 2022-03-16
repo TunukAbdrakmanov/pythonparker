@@ -1,0 +1,21 @@
+touch requirements.txt (Django, psycopg2-binary)
+pip install -r requirements.txt
+
+django-admin startproject django_project .
+
+python3 manage.py startapp post
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'parker', название базы данных
+        'USER': 'test_user', название пользователя
+        'HOST': 'localhost', хост
+        'PORT': 5432, порт
+        'PASSWORD': '1', пароль
+    }
+}
+
+
+python3 manage.py makemigrations
+python3 manage.py createsuoeruser
